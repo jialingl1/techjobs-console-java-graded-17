@@ -98,6 +98,7 @@ public class JobData {
         //Me3: Looped through the hashMap using the map method and stored objects values (in all columns) in 'aValue'.
         //Me4: created conditional to check 'aValue' with user searchTerm and added results to 'values';
         //Me5: made case insensitive -modified findByValue and findByColumnAndValue;
+        //Me6: added 'break' statement at the end of last loop to avoid duplicate jobs in results;
 
         ArrayList<HashMap<String, String>> values = new ArrayList<>();
 
@@ -108,6 +109,8 @@ public class JobData {
 
                 if (aValue.toUpperCase().contains(value.toUpperCase())) {
                     values.add(row);
+                    break;
+
                 }
             }
 
