@@ -72,7 +72,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toUpperCase().contains(value.toUpperCase())) {
                 jobs.add(row);
             }
         }
@@ -93,10 +93,11 @@ public class JobData {
 
         // TODO - implement this method
 
-        //Me1: Declared values;
+        //Me1: Declared 'values' to store final results;
         //Me2: Looped through allJobs with for each loop;
-        //Me3: Looped through the hashMap using the map method and stored objects values in aValue.
-        //Me4: created conditional
+        //Me3: Looped through the hashMap using the map method and stored objects values (in all columns) in 'aValue'.
+        //Me4: created conditional to check 'aValue' with user searchTerm and added results to 'values';
+        //Me5: made case insensitive -modified findByValue and findByColumnAndValue;
 
         ArrayList<HashMap<String, String>> values = new ArrayList<>();
 
@@ -105,7 +106,7 @@ public class JobData {
             for (Map.Entry<String, String> entry : row.entrySet()) {
                 String aValue = entry.getValue();
 
-                if (aValue.contains(value)) {
+                if (aValue.toUpperCase().contains(value.toUpperCase())) {
                     values.add(row);
                 }
             }

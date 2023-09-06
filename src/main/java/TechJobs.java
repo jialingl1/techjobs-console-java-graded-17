@@ -132,16 +132,17 @@ public class TechJobs {
         //Me2: Iterated over each item in someJobs with Map method.
 
         for (HashMap<String, String> job : someJobs) {
-
             System.out.println("*****");
 
             for (Map.Entry<String, String> entry : job.entrySet()) {
                 System.out.println(entry.getKey() + ": " + entry.getValue());
+
             }
 
             System.out.println("*****" + "\n");
 
         }
+
 
     }
 
