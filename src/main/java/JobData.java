@@ -5,10 +5,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -95,7 +92,27 @@ public class JobData {
         loadData();
 
         // TODO - implement this method
-        return null;
+
+        //Me1: Declared values;
+        //Me2: Looped through allJobs with for each loop;
+        //Me3: Looped through the hashMap using the map method and stored objects values in aValue.
+        //Me4: created conditional
+
+        ArrayList<HashMap<String, String>> values = new ArrayList<>();
+
+        for(HashMap<String, String> row: allJobs) {
+
+            for (Map.Entry<String, String> entry : row.entrySet()) {
+                String aValue = entry.getValue();
+
+                if (aValue.contains(value)) {
+                    values.add(row);
+                }
+            }
+
+        }
+
+        return values;
     }
 
     /**
