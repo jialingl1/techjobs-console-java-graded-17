@@ -124,27 +124,30 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         //Me3: added conditional for results validation after Me1 and Me2
 
-        if(!someJobs.contains(someJobs)) {
-            System.out.println("No Results");
+        if(someJobs.isEmpty()) {
+            System.out.print("No Results");
         }
+
 
         //Me1: Iterated over arrayList of someJobs using a for-each loop.
         //Me2: Iterated over each item in someJobs with Map method.
 
         for (HashMap<String, String> job : someJobs) {
-            System.out.println("*****");
+        //    if(!job.containsValue(job)) {
+         //      System.out.println("No Results");
+         //   }
+
+            System.out.println("\n*****");
 
             for (Map.Entry<String, String> entry : job.entrySet()) {
                 System.out.println(entry.getKey() + ": " + entry.getValue());
 
             }
 
-            System.out.println("*****" + "\n");
+            System.out.println("*****");
 
         }
 
-
     }
-
 
 }
